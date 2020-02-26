@@ -15,7 +15,7 @@ before_install:
   - docker build -t "$docker_username"/devops .
 script:
   - terraform --version
-  - docker push "$docker_registry_name"/devops:latest
+  - docker push "$docker_username"/devops:latest
   - terraform init
   - terraform apply -auto-approve
   - sleep 20
@@ -29,6 +29,6 @@ deploy:
   bucket_path: docker
   on:
     branch: master
-  access_key_id: $AWS_ACCESS_KEY
+  access_key_id: $AWS_ACCESS_KEY_ID
   secret_access_key:
-    secure: $AWS_SECRET_KEY
+    secure: $AWS_SECRET_ACCESS_KEY
