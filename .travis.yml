@@ -3,7 +3,7 @@ services:
 - docker
 env:
   global:
-  - docker_registry_name: jjino
+#  - docker_registry_name: jjino
   - AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY
   - AWS_SECRET_ACCESS_KEY: $AWS_SECRET_KEY
 before_install:
@@ -12,7 +12,7 @@ before_install:
   - rm terraform_0.12.18_linux_amd64.zip
   - sudo chmod +x /usr/local/bin/terraform
   - echo "$docker_password" | docker login -u "$docker_username" --password-stdin
-  - docker build -t "$docker_registry_name"/devops .
+  - docker build -t "$docker_username"/devops .
 script:
   - terraform --version
   - docker push "$docker_registry_name"/devops:latest
