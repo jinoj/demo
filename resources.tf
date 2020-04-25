@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "default" {
-  bucket = "devops-node-bucket-made"
+  bucket = "elasticbeanstalk-${var.region}-012350340112"    #""devops-node-bucket-made"
 }
 
 resource "aws_s3_bucket_object" "default" {

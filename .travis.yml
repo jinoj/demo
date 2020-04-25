@@ -24,7 +24,7 @@ deploy:
   region: us-east-1
   app:  devops-node-materials
   env:  devops-node-materials-env
-  bucket_name: devops-node-bucket-made # elasticbeanstalk-us-east-1-012350340112
+  bucket_name: elasticbeanstalk-us-east-1-012350340112
   bucket_path: docker
   on:
     branch: master
