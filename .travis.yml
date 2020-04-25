@@ -1,9 +1,9 @@
 sudo: required
 services:
 - docker
-env:
-  global:
-#  - docker_registry_name: jjino
+# env:
+#   global:
+# #  - docker_registry_name: jjino
 
 before_install:
   - curl -O https://releases.hashicorp.com/terraform/0.12.18/terraform_0.12.18_linux_amd64.zip
@@ -11,7 +11,7 @@ before_install:
   - rm terraform_0.12.18_linux_amd64.zip
   - sudo chmod +x /usr/local/bin/terraform
   - echo "$docker_password" | docker login -u "$docker_username" --password-stdin
-  - docker build -t "$docker_username"/devops .
+  - docker build -t "$docker_username"/devops node/
 script:
   - terraform --version
   - docker push "$docker_username"/devops:latest
