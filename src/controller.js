@@ -14,7 +14,7 @@ const healthcheck = (req, res) => {
     if (Math.random() > 0.995) {
         return res.send({
             status: "down",
-            reason: "The odds are not with you"
+            reason: "The odds are not with you!"
         });
     }
 

@@ -1,8 +1,8 @@
 sudo: required
 services:
 - docker
-env:
-  global:
+# env:
+#   global:
 #  - docker_registry_name: jjino
 
 before_install:
@@ -19,6 +19,10 @@ script:
   - terraform apply -auto-approve
   - sleep 20
 #  - terraform destroy -auto-approve 
+
+after_deploy:
+  - echo "done deploying"
+
 deploy:
   provider: elasticbeanstalk
   region: "us-east-1"
@@ -28,7 +32,6 @@ deploy:
   # bucket_path: "docker"
   on:
     branch: master
-  access_key_id: 
-    secure: $AWS_ACCESS_KEY_ID
+  access_key_id: $AWS_ACCESS_KEY_ID
   secret_access_key:
-    secure: $AWS_SECRET_ACCESS_KEY
+    secure: "$AWS_SECRET_ACCESS_KEY"
