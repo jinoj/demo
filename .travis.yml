@@ -21,11 +21,11 @@ script:
 #  - terraform destroy -auto-approve 
 deploy:
   provider: elasticbeanstalk
-  region: us-east-1
-  app:  devops-node-materials
-  env:  devops-node-materials-env
-  bucket_name: elasticbeanstalk-us-east-1-348359448481
-  bucket_path: docker
+  region: "us-east-1"
+  app:  "devops-node-materials"
+  env:  "devops-node-materials-env"
+  bucket_name: "elasticbeanstalk-us-east-1-348359448481"
+  bucket_path: "docker"
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY_ID
