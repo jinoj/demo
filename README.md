@@ -1,4 +1,4 @@
-# devops-assessment
+# devops-assessment-project
 
 This repository contains a NodeJS application with two endpoints.
 
