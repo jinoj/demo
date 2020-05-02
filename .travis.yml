@@ -25,9 +25,10 @@ deploy:
   app:  "devops-node-materials"
   env:  "devops-node-materials-env"
   bucket_name: "elasticbeanstalk-us-east-1-348359448481"
-  bucket_path: "docker"
+  # bucket_path: "docker"
   on:
     branch: master
-  access_key_id: $AWS_ACCESS_KEY_ID
+  access_key_id: 
+    secure: $AWS_ACCESS_KEY_ID
   secret_access_key:
     secure: $AWS_SECRET_ACCESS_KEY
